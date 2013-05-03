@@ -1,3 +1,8 @@
+//Oscar Coloma
+//Gonzalo Herrera Vivanco
+//Rodrigo Cardenaz Plaza
+
+
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
@@ -8,6 +13,7 @@ using namespace std;
 void mostrarCampos(int campos, PGresult *resultado)
 {
      cout <<"" << endl << endl;
+
      for (int i=0; i<campos; i++) 
                cout << PQfname(resultado,i) << "          ";   
                             
@@ -25,6 +31,7 @@ void Filas(int campos,int tuplas,PGresult *resultado)
          for (int j=0; j<campos; j++) 
              cout << PQgetvalue(resultado,i,j) << "         ";
          cout << endl;
+
      }
 }
 
@@ -47,11 +54,8 @@ void opcionA(int campos,int tuplas,PGresult *resultado)
          }
          cout << endl;
      }
-     fs.close();
+   fs.close();
 }
-
-
-
 
 int main(int argc, char * argv[])
 {
@@ -64,8 +68,7 @@ int main(int argc, char * argv[])
         string opcion;
         int id;
 
-        
-        do
+       do
         {
              cout<<"-i id"<<endl;  
              cout<<"-a"<<endl;  
