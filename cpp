@@ -59,7 +59,7 @@ void opcionA(int campos,int tuplas,PGresult *resultado)
 
 int main(int argc, char * argv[])
 {
-    char *host = "localhost", *port = "5432",*dataBase = "tarea5",*user = "postgres",*passwd = "root";   
+    char *host = "sebastian.cl", *port = "5432",*dataBase = "iswdb",*user = "isw",*passwd = "isw";   
     PGconn *cnn = PQsetdbLogin(host,port,NULL,NULL,dataBase,user,passwd);
     if (PQstatus(cnn) != CONNECTION_BAD) 
     {
