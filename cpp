@@ -35,11 +35,12 @@ void Filas(int campos,int tuplas,PGresult *resultado)
      }
 }
 
-void  Fecha()
+void  FechaHora()
 {
       time_t t = time(0);
       struct tm * now = localtime(&t);
       cout << (now->tm_year + 1900) << "-" << (now->tm_mon + 1) << "-"<<  now->tm_mday<< endl;
+      cout <<now->tm_hour<<":" <<now->tm_min<< endl;
 }
 
 void opcionA(int campos,int tuplas,PGresult *resultado)
@@ -59,7 +60,7 @@ void opcionA(int campos,int tuplas,PGresult *resultado)
 
 int main(int argc, char * argv[])
 {
-    char *host = "localhost", *port = "5432",*dataBase = "tarea5",*user = "postgres",*passwd = "root";   
+    char *host = "sebastian.cl", *port = "5432",*dataBase = "iswdb",*user = "isw",*passwd = "isw";   
     PGconn *cnn = PQsetdbLogin(host,port,NULL,NULL,dataBase,user,passwd);
     if (PQstatus(cnn) != CONNECTION_BAD) 
     {
@@ -106,7 +107,8 @@ int main(int argc, char * argv[])
              
              if(opcion == "-v")
              {
-                   Fecha();
+                   FechaHora();
+                   cout << " Integrantes" << endl<<" Rodrigo Cardenas" << endl<< " Oscar Coloma" << endl<< " Gonzalo Herrera" << endl;
              }
              
         }while(opcion!="-9");
